@@ -1,23 +1,10 @@
 import React from 'react';
 import {Bar,Line} from 'react-chartjs-2'
-import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid'
 
-
-
-
-
-
-
-const useStyles = makeStyles(() => ({
-  pad:{
-    
-    padding:'30%'
-  }
-}));
 const Chart = ({ data, country }) => {
-  const classes = useStyles();
 
-console.log(data)
+
   const dailydata = data.daily.read();
   const { confirmed, recovered, deaths } = data.users.read();
 
@@ -45,11 +32,6 @@ const lineChart = (
 );
 
 
-console.log(dailydata)
-
-console.log(country)
-
-
 const barChart = (
   confirmed ? (
     <Bar
@@ -71,20 +53,10 @@ const barChart = (
   ) : null
 );
 
-
-
-    
-    
-
-  
-  
-
-  return (
-    <div className="container">
-        
-       {country ?  barChart : lineChart}
-        
-    </div>
+ return (
+    <Grid container>
+        {country ?  barChart : lineChart}
+    </Grid>
   );
 };
 

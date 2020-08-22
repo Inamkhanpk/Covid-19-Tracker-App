@@ -6,19 +6,19 @@ import Grid from '@material-ui/core/Grid';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   map:{
-    padding:'5%',
+    padding:theme.spacing(6),
     
   }
 }));
 
 
 export default function Map({data}) {
-    console.log(data)
+    
     const classes = useStyles();
     const mapData =data.mapdatacountry.read();
-   console.log(mapData.data)
+   
     const [viewport, setViewport] = useState({
         width: "45vw",
         height: "45vh",
@@ -34,6 +34,8 @@ export default function Map({data}) {
            <h1>Map View</h1>
            </Grid>
        </Grid>
+
+
        <Grid item xs={12} md={12} >
        <Grid container justify="center" className={classes.map}>
         <div>
