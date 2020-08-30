@@ -5,7 +5,7 @@ import CountryPicker from './components/CountryPicker/CountryPicker'
 import Chart from './components/Chart/Chart'
 import Footer from './components/Footer/Footer'
 import Info from './components/Info/Info'
-import Map from './components/Map/Map'
+//import Map from './components/Map/Map'
 import createResource from "./API/api.js";
 import {fetchData} from './API/api.js'
 import './App.css'
@@ -30,11 +30,10 @@ function App (){
      <Info/>
      <CountryPicker data={fetchedData} handleCountryChange={handleCountryChange}/>
      <CovidCard data={fetchedData} />
-     
      <Chart data={fetchedData} country={country} />
-     
-     <Map data={fetchedData}/>
+     {/* <Map data={fetchedData}/> */}
      <Footer/>
+     
      </Suspense>
     </div>
   );
